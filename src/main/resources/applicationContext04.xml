@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 利用静态工厂创建对象 -->
+    <bean id="apple1" class="com.ulsum.ioc.factory.AppleStaticFactory" factory-method="createSweetApple">
+    </bean>
+
+    <!-- 利用工厂实例方法获取对象 -->
+    <bean id="factoryInstance" class="com.ulsum.ioc.factory.AppleFactoryInstance"></bean>
+    <bean id="apple2" factory-bean="factoryInstance" factory-method="createSweetApple"></bean>
+
+</beans>

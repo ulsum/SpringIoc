@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="apple1, apple2" class="com.ulsum.ioc.entity.Apple">
+        <property name="title" value="红富士"></property>
+        <property name="origin" value="欧洲"></property>
+        <property name="color" value="红色"></property>
+        <property name="price" value="10.99"></property>
+    </bean>
+
+    <!-- 没有id与name的bean，默认使用类名全称作为bean标识 -->
+    <bean class="com.ulsum.ioc.entity.Apple">
+        <property name="title" value="红富士2"></property>
+        <property name="origin" value="欧洲2"></property>
+        <property name="color" value="红色2"></property>
+        <property name="price" value="10.99"></property>
+    </bean>
+
+</beans>

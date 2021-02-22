@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sourApple" class="com.ulsum.ioc.entity.Apple">
+        <property name="title" value="青苹果"></property>
+        <property name="origin" value="中亚"></property>
+        <property name="color" value="绿色"></property>
+        <property name="price" value="9.8"></property>
+    </bean>
+
+    <bean id="andy" class="com.ulsum.ioc.entity.Child">
+        <constructor-arg name="name" value="安迪"/>
+        <constructor-arg name="apple" ref="sourApple"/>
+    </bean>
+
+</beans>

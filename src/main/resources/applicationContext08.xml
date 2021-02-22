@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="c1" class="com.ulsum.ioc.entity.Computer">
+        <constructor-arg name="brand" value="联想"></constructor-arg>
+        <constructor-arg name="type" value="台式机"></constructor-arg>
+        <constructor-arg name="sn" value="839283012"></constructor-arg>
+        <constructor-arg name="price" value="3085"></constructor-arg>
+    </bean>
+
+    <bean class="com.ulsum.ioc.entity.Computer">
+        <constructor-arg name="brand" value="Apple"></constructor-arg>
+        <constructor-arg name="type" value="台式机"></constructor-arg>
+        <constructor-arg name="sn" value="839283014"></constructor-arg>
+        <constructor-arg name="price" value="13999"></constructor-arg>
+    </bean>
+
+    <bean class="com.ulsum.ioc.entity.Computer">
+        <constructor-arg name="brand" value="Apple"></constructor-arg>
+        <constructor-arg name="type" value="笔记本"></constructor-arg>
+        <constructor-arg name="sn" value="839283015"></constructor-arg>
+        <constructor-arg name="price" value="23999"></constructor-arg>
+    </bean>
+
+    <bean id="company" class="com.ulsum.ioc.entity.Company">
+        <property name="rooms">
+            <!-- list与set相似，区别仅在于set不能重复（用的是arrayList、linkHashSet传参） -->
+            <list>
+                <value>2001 - CEO办公室</value>
+                <value>2002 - 总监办公室</value>
+                <value>2003 - 经理办公室</value>
+            </list>
+        </property>
+        <property name="computers">
+            <!-- 用的是linkedHashMap传参 -->
+            <map>
+                <!-- 一般写法 -->
+                <entry key="dev-88172" value-ref="c1"></entry>
+                <!-- 简化写法 -->
+                <entry key="dev-88173">
+                    <bean class="com.ulsum.ioc.entity.Computer">
+                        <constructor-arg name="brand" value="IBM"></constructor-arg>
+                        <constructor-arg name="type" value="笔记本"></constructor-arg>
+                        <constructor-arg name="sn" value="839283013"></constructor-arg>
+                        <constructor-arg name="price" value="12999"></constructor-arg>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="phone">010-61234567</prop>
+                <prop key="address">北京市朝阳区</prop>
+                <prop key="website">http://www.xxx.com</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

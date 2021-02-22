@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ulsum</groupId>
+    <artifactId>SpringIoc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 设置阿里云远程仓库 -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--
+            Spring上下文对象（用Spring最小的范围）
+            spring-core：spring最核心的模块，所有spring最底层的代码都是在这里面书写的
+            spring-beans：spring对java对象（也就是bean）管理的模块
+            spring-expression：spring内置的表达式模块
+            spring-jcl：spring与日志进行交互的模块
+            spring-aop：spring的面向切面编程的模块
+            spring-context：spring的上下文，利用里面提供的applicationContext对象，创建IoC容器
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+
+</project>

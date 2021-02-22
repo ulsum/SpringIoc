@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 使用带参构造方法创建对象 -->
+    <bean id="appleConstructorParam" class="com.ulsum.ioc.entity.Apple">
+        <constructor-arg name="title" value="红富士"></constructor-arg>
+        <constructor-arg name="color" value="红色"></constructor-arg>
+        <constructor-arg name="origin" value="欧洲"></constructor-arg>
+        <!-- Spring可以自动的进行类型转换，字符转成Float -->
+        <constructor-arg index="3" value="10.99"></constructor-arg>
+    </bean>
+
+</beans>
